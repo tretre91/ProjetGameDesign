@@ -506,6 +506,24 @@
         "name": "platformIndustrial_070.png",
         "smoothed": true,
         "userAdded": false
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "slice24_24.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "slice24_24.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "adventurer_stand.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "adventurer_stand.png",
+        "smoothed": true,
+        "userAdded": false
       }
     ],
     "resourceFolders": []
@@ -538,7 +556,7 @@
         "gridWidth": 32,
         "snap": false,
         "windowMask": false,
-        "zoomFactor": 0.61
+        "zoomFactor": 0.302
       },
       "objectsGroups": [],
       "variables": [],
@@ -811,43 +829,11 @@
           "layer": "",
           "locked": false,
           "name": "pente",
-          "persistentUuid": "3b1c30f8-a0ba-4faf-acea-29b2b5bfd0cc",
-          "width": 0,
-          "x": 671,
-          "y": 569,
-          "zOrder": 14,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
-          "customSize": false,
-          "height": 0,
-          "layer": "",
-          "locked": false,
-          "name": "pente",
           "persistentUuid": "21d24cdc-37cf-4ea7-9b1c-402ff297bdeb",
           "width": 0,
           "x": 360,
           "y": 382,
           "zOrder": 15,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
-          "customSize": true,
-          "height": 32,
-          "layer": "",
-          "locked": false,
-          "name": "Plateforme_traversable",
-          "persistentUuid": "a91bd38c-dfe4-4b96-b7bf-31607ccd63ae",
-          "width": 235,
-          "x": 406,
-          "y": 313,
-          "zOrder": 20,
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
@@ -1026,7 +1012,7 @@
           "name": "Ennemi",
           "persistentUuid": "11981b88-aa0a-4d60-bebc-62f0c6f3f7a6",
           "width": 0,
-          "x": 1487,
+          "x": 1039,
           "y": 934,
           "zOrder": 31,
           "numberProperties": [],
@@ -1058,7 +1044,7 @@
           "name": "Ennemi2",
           "persistentUuid": "a4921cd9-8d04-4e9f-b0ff-0c45c483c95d",
           "width": 86,
-          "x": 1614,
+          "x": 1608,
           "y": 199,
           "zOrder": 33,
           "numberProperties": [],
@@ -1169,7 +1155,7 @@
           "locked": false,
           "name": "Plateforme_traversable",
           "persistentUuid": "736a2415-0603-411c-b4f7-6044e6db2703",
-          "width": 304,
+          "width": 537,
           "x": 102,
           "y": 312,
           "zOrder": 43,
@@ -1690,7 +1676,7 @@
           "initialVariables": []
         },
         {
-          "angle": 177.303,
+          "angle": 180,
           "customSize": true,
           "height": 28,
           "layer": "",
@@ -1738,7 +1724,7 @@
           "initialVariables": []
         },
         {
-          "angle": -178.617,
+          "angle": 180,
           "customSize": true,
           "height": 32,
           "layer": "",
@@ -1754,7 +1740,7 @@
           "initialVariables": []
         },
         {
-          "angle": -178.617,
+          "angle": 180,
           "customSize": true,
           "height": 32,
           "layer": "",
@@ -1826,7 +1812,7 @@
           "name": "Ennemi2",
           "persistentUuid": "a7307fd6-3054-463a-951b-daeffb1fc49f",
           "width": 0,
-          "x": 3028,
+          "x": 2979,
           "y": 1188,
           "zOrder": 83,
           "numberProperties": [],
@@ -1834,7 +1820,7 @@
           "initialVariables": []
         },
         {
-          "angle": 177.961,
+          "angle": 180,
           "customSize": true,
           "height": 32,
           "layer": "",
@@ -1927,7 +1913,12 @@
           "zOrder": 88,
           "numberProperties": [],
           "stringProperties": [],
-          "initialVariables": []
+          "initialVariables": [
+            {
+              "name": "Direction",
+              "value": "still"
+            }
+          ]
         },
         {
           "angle": 0,
@@ -2072,6 +2063,139 @@
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "layer": "Interactions",
+          "locked": false,
+          "name": "Droite",
+          "persistentUuid": "5c86b014-1527-40d9-86bd-d8a932b8ad6a",
+          "width": 0,
+          "x": 1060,
+          "y": 277,
+          "zOrder": 97,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "layer": "Interactions",
+          "locked": false,
+          "name": "Droite",
+          "persistentUuid": "da633a05-d8db-4a1d-8537-2ac7d3cd137d",
+          "width": 0,
+          "x": 954,
+          "y": 928,
+          "zOrder": 98,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "layer": "Interactions",
+          "locked": false,
+          "name": "Gauche",
+          "persistentUuid": "5888224a-cc27-42b0-b7a4-c3ce87d40d49",
+          "width": 0,
+          "x": 1771,
+          "y": 926,
+          "zOrder": 99,
+          "numberProperties": [
+            {
+              "name": "animation",
+              "value": 0
+            }
+          ],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "layer": "Interactions",
+          "locked": false,
+          "name": "Gauche",
+          "persistentUuid": "ffaf0434-6b44-4125-ae79-30951fedc414",
+          "width": 0,
+          "x": 1696,
+          "y": 279,
+          "zOrder": 100,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "layer": "Interactions",
+          "locked": false,
+          "name": "Droite",
+          "persistentUuid": "52458742-740c-4d6b-a482-9ec50c0887f2",
+          "width": 0,
+          "x": 2931,
+          "y": 1397,
+          "zOrder": 101,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "layer": "Interactions",
+          "locked": false,
+          "name": "Gauche",
+          "persistentUuid": "634f0352-2289-41fa-a104-a72922d4c330",
+          "width": 0,
+          "x": 3171,
+          "y": 1400,
+          "zOrder": 102,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "layer": "Interactions",
+          "locked": false,
+          "name": "Droite",
+          "persistentUuid": "2da77b82-e5da-45d3-a619-90490b1cce61",
+          "width": 0,
+          "x": 2978,
+          "y": 1781,
+          "zOrder": 103,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "layer": "Interactions",
+          "locked": false,
+          "name": "Gauche",
+          "persistentUuid": "77bf1f7f-b719-4224-b3fe-0f35dc2d6906",
+          "width": 0,
+          "x": 3202,
+          "y": 1783,
+          "zOrder": 104,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
         }
       ],
       "objects": [
@@ -2160,7 +2284,7 @@
                   "sprites": [
                     {
                       "hasCustomCollisionMask": false,
-                      "image": "adventurer_walk2.png",
+                      "image": "adventurer_stand.png",
                       "points": [],
                       "originPoint": {
                         "name": "origine",
@@ -2738,7 +2862,7 @@
           "height": 32,
           "name": "piege3",
           "tags": "",
-          "texture": "platformIndustrial_005.png",
+          "texture": "slice24_24.png",
           "type": "TiledSpriteObject::TiledSprite",
           "width": 32,
           "variables": [],
@@ -3111,48 +3235,6 @@
                           },
                           "parameters": [
                             "Valise_sprite",
-                            "plateforme",
-                            "",
-                            "",
-                            ""
-                          ],
-                          "subInstructions": []
-                        },
-                        {
-                          "type": {
-                            "inverted": false,
-                            "value": "CollisionNP"
-                          },
-                          "parameters": [
-                            "Valise_sprite",
-                            "pics",
-                            "",
-                            "",
-                            ""
-                          ],
-                          "subInstructions": []
-                        },
-                        {
-                          "type": {
-                            "inverted": false,
-                            "value": "CollisionNP"
-                          },
-                          "parameters": [
-                            "Valise_sprite",
-                            "plaeforme2",
-                            "",
-                            "",
-                            ""
-                          ],
-                          "subInstructions": []
-                        },
-                        {
-                          "type": {
-                            "inverted": false,
-                            "value": "CollisionNP"
-                          },
-                          "parameters": [
-                            "Valise_sprite",
                             "NewSol",
                             "",
                             "",
@@ -3266,6 +3348,49 @@
               "parameters": [
                 "Joueur",
                 "\"Saut\""
+              ],
+              "subInstructions": []
+            }
+          ],
+          "events": []
+        },
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "PlatformBehavior::IsFalling"
+              },
+              "parameters": [
+                "Joueur",
+                "PlatformerObject"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "PosY"
+              },
+              "parameters": [
+                "Joueur",
+                ">=",
+                "2000"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "Quit"
+              },
+              "parameters": [
+                ""
               ],
               "subInstructions": []
             }
@@ -3489,7 +3614,7 @@
                     "pics",
                     "",
                     "",
-                    ""
+                    "no"
                   ],
                   "subInstructions": []
                 }
@@ -3674,6 +3799,17 @@
               "type": {
                 "inverted": false,
                 "value": "PlatformBehavior::SimulateUpKey"
+              },
+              "parameters": [
+                "Joueur",
+                "PlatformerObject"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "PlatformBehavior::SimulateLadderKey"
               },
               "parameters": [
                 "Joueur",
@@ -4705,7 +4841,7 @@
           "followBaseLayerCamera": false,
           "isLightingLayer": false,
           "name": "Interactions",
-          "visibility": true,
+          "visibility": false,
           "cameras": [],
           "effects": []
         }
