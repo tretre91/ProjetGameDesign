@@ -536,9 +536,9 @@
         "gridOffsetY": 0,
         "gridR": 158,
         "gridWidth": 32,
-        "snap": true,
+        "snap": false,
         "windowMask": false,
-        "zoomFactor": 0.856
+        "zoomFactor": 0.61
       },
       "objectsGroups": [],
       "variables": [],
@@ -744,8 +744,8 @@
           "name": "Ennemi",
           "persistentUuid": "e95e1497-4329-463d-b178-e84ce342391a",
           "width": 61,
-          "x": -84,
-          "y": 263,
+          "x": 306,
+          "y": 271,
           "zOrder": 9,
           "numberProperties": [],
           "stringProperties": [],
@@ -765,7 +765,7 @@
           "name": "Gauche",
           "persistentUuid": "7830376d-2f15-41fc-bde0-6a729208f274",
           "width": 0,
-          "x": 32,
+          "x": 620,
           "y": 268,
           "zOrder": 10,
           "numberProperties": [],
@@ -781,7 +781,7 @@
           "name": "Droite",
           "persistentUuid": "0884a33b-1d5b-4e06-802a-2e8d36e02d13",
           "width": 0,
-          "x": -321,
+          "x": 100,
           "y": 271,
           "zOrder": 11,
           "numberProperties": [],
@@ -838,38 +838,6 @@
         },
         {
           "angle": 0,
-          "customSize": false,
-          "height": 0,
-          "layer": "",
-          "locked": false,
-          "name": "pente",
-          "persistentUuid": "b1f6efd8-4ef1-4050-a0f1-f253fd78582d",
-          "width": 0,
-          "x": 461,
-          "y": 258,
-          "zOrder": 16,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
-          "customSize": true,
-          "height": 32,
-          "layer": "",
-          "locked": false,
-          "name": "sol",
-          "persistentUuid": "dacfcd6b-b77c-434b-a371-caf943f023f3",
-          "width": 210,
-          "x": 583,
-          "y": 572,
-          "zOrder": 18,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
           "customSize": true,
           "height": 32,
           "layer": "",
@@ -898,7 +866,12 @@
           "zOrder": 21,
           "numberProperties": [],
           "stringProperties": [],
-          "initialVariables": []
+          "initialVariables": [
+            {
+              "name": "Direction",
+              "value": "still"
+            }
+          ]
         },
         {
           "angle": 0,
@@ -1308,7 +1281,7 @@
           "locked": false,
           "name": "sol",
           "persistentUuid": "3df1c148-773d-4e7a-9ad3-d3e69e8f7876",
-          "width": 547,
+          "width": 763,
           "x": 35,
           "y": 572,
           "zOrder": 50,
@@ -2083,6 +2056,22 @@
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "layer": "UI",
+          "locked": false,
+          "name": "TexteVies",
+          "persistentUuid": "38c787bc-9823-49ba-a13e-2e6c75ae4eba",
+          "width": 0,
+          "x": 33,
+          "y": 51,
+          "zOrder": 0,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
         }
       ],
       "objects": [
@@ -2134,6 +2123,10 @@
             {
               "name": "Direction",
               "value": "right"
+            },
+            {
+              "name": "Vies",
+              "value": "5"
             }
           ],
           "behaviors": [
@@ -2221,7 +2214,7 @@
               "directions": [
                 {
                   "looping": true,
-                  "timeBetweenFrames": 0.05,
+                  "timeBetweenFrames": 0.12,
                   "sprites": [
                     {
                       "hasCustomCollisionMask": false,
@@ -2428,7 +2421,7 @@
                   "timeBetweenFrames": 0.5,
                   "sprites": [
                     {
-                      "hasCustomCollisionMask": false,
+                      "hasCustomCollisionMask": true,
                       "image": "character_robot_cheer0.png",
                       "points": [],
                       "originPoint": {
@@ -2442,10 +2435,29 @@
                         "x": 0,
                         "y": 0
                       },
-                      "customCollisionMask": []
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 0,
+                            "y": 70
+                          },
+                          {
+                            "x": 192,
+                            "y": 70
+                          },
+                          {
+                            "x": 192,
+                            "y": 256
+                          },
+                          {
+                            "x": 0,
+                            "y": 256
+                          }
+                        ]
+                      ]
                     },
                     {
-                      "hasCustomCollisionMask": false,
+                      "hasCustomCollisionMask": true,
                       "image": "character_robot_walk5.png",
                       "points": [],
                       "originPoint": {
@@ -2459,7 +2471,26 @@
                         "x": 0,
                         "y": 0
                       },
-                      "customCollisionMask": []
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 0,
+                            "y": 70
+                          },
+                          {
+                            "x": 192,
+                            "y": 70
+                          },
+                          {
+                            "x": 192,
+                            "y": 256
+                          },
+                          {
+                            "x": 0,
+                            "y": 256
+                          }
+                        ]
+                      ]
                     }
                   ]
                 }
@@ -2607,51 +2638,6 @@
           ]
         },
         {
-          "name": "Boule_de_feu",
-          "tags": "",
-          "type": "Sprite",
-          "updateIfNotVisible": false,
-          "variables": [],
-          "behaviors": [
-            {
-              "name": "DestroyOutside",
-              "type": "DestroyOutsideBehavior::DestroyOutside",
-              "extraBorder": 600
-            }
-          ],
-          "animations": [
-            {
-              "name": "Base",
-              "useMultipleDirections": false,
-              "directions": [
-                {
-                  "looping": false,
-                  "timeBetweenFrames": 0.08,
-                  "sprites": [
-                    {
-                      "hasCustomCollisionMask": false,
-                      "image": "Ressources\\fireball.png",
-                      "points": [],
-                      "originPoint": {
-                        "name": "origine",
-                        "x": 0,
-                        "y": 0
-                      },
-                      "centerPoint": {
-                        "automatic": true,
-                        "name": "centre",
-                        "x": 0,
-                        "y": 0
-                      },
-                      "customCollisionMask": []
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
           "name": "Valise_sprite",
           "tags": "",
           "type": "Sprite",
@@ -2713,10 +2699,10 @@
           "variables": [],
           "behaviors": [
             {
-              "canBeGrabbed": true,
               "name": "Platform",
-              "platformType": "NormalPlatform",
               "type": "PlatformBehavior::PlatformBehavior",
+              "canBeGrabbed": true,
+              "platformType": "NormalPlatform",
               "yGrabOffset": 0
             }
           ]
@@ -2740,10 +2726,10 @@
           "variables": [],
           "behaviors": [
             {
-              "canBeGrabbed": true,
               "name": "Platform",
-              "platformType": "NormalPlatform",
               "type": "PlatformBehavior::PlatformBehavior",
+              "canBeGrabbed": true,
+              "platformType": "NormalPlatform",
               "yGrabOffset": 0
             }
           ]
@@ -2768,10 +2754,10 @@
           "variables": [],
           "behaviors": [
             {
-              "canBeGrabbed": true,
               "name": "Platform",
-              "platformType": "NormalPlatform",
               "type": "PlatformBehavior::PlatformBehavior",
+              "canBeGrabbed": true,
+              "platformType": "NormalPlatform",
               "yGrabOffset": 0
             }
           ]
@@ -2786,10 +2772,10 @@
           "variables": [],
           "behaviors": [
             {
-              "canBeGrabbed": true,
               "name": "Platform",
-              "platformType": "Ladder",
               "type": "PlatformBehavior::PlatformBehavior",
+              "canBeGrabbed": true,
+              "platformType": "Ladder",
               "yGrabOffset": 0
             }
           ]
@@ -2814,10 +2800,10 @@
           "variables": [],
           "behaviors": [
             {
-              "canBeGrabbed": true,
               "name": "Platform",
-              "platformType": "NormalPlatform",
               "type": "PlatformBehavior::PlatformBehavior",
+              "canBeGrabbed": true,
+              "platformType": "NormalPlatform",
               "yGrabOffset": 0
             }
           ]
@@ -2832,10 +2818,10 @@
           "variables": [],
           "behaviors": [
             {
-              "canBeGrabbed": false,
               "name": "Platform",
-              "platformType": "NormalPlatform",
               "type": "PlatformBehavior::PlatformBehavior",
+              "canBeGrabbed": false,
+              "platformType": "NormalPlatform",
               "yGrabOffset": 0
             }
           ]
@@ -2878,6 +2864,25 @@
             "g": 0,
             "r": 0
           }
+        },
+        {
+          "bold": false,
+          "italic": false,
+          "name": "TexteVies",
+          "smoothed": true,
+          "tags": "",
+          "type": "TextObject::Text",
+          "underlined": false,
+          "variables": [],
+          "behaviors": [],
+          "string": "Vies : ",
+          "font": "Ressources\\Bimbo_JVE.ttf",
+          "characterSize": 26,
+          "color": {
+            "b": 43,
+            "g": 43,
+            "r": 139
+          }
         }
       ],
       "events": [
@@ -2910,6 +2915,18 @@
                 "TexteScore",
                 "=",
                 "\"Score : \" + ToString(Variable(Score))"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "TextObject::String"
+              },
+              "parameters": [
+                "TexteVies",
+                "=",
+                "\"Vies : \" + Joueur.VariableString(Vies)"
               ],
               "subInstructions": []
             }
@@ -2966,7 +2983,7 @@
                         "=",
                         "Joueur.X() + 50",
                         "=",
-                        "Joueur.Y() + 50"
+                        "Joueur.Y() + 65"
                       ],
                       "subInstructions": []
                     }
@@ -3001,9 +3018,9 @@
                       "parameters": [
                         "Valise_sprite",
                         "=",
-                        "Joueur.X() - 10",
+                        "Joueur.X()",
                         "=",
-                        "Joueur.Y() + 50"
+                        "Joueur.Y() + 65"
                       ],
                       "subInstructions": []
                     }
@@ -3053,6 +3070,90 @@
                           "parameters": [
                             "Valise_sprite",
                             "Plateforme_traversable",
+                            "",
+                            "",
+                            ""
+                          ],
+                          "subInstructions": []
+                        },
+                        {
+                          "type": {
+                            "inverted": false,
+                            "value": "CollisionNP"
+                          },
+                          "parameters": [
+                            "Valise_sprite",
+                            "sol",
+                            "",
+                            "",
+                            ""
+                          ],
+                          "subInstructions": []
+                        },
+                        {
+                          "type": {
+                            "inverted": false,
+                            "value": "CollisionNP"
+                          },
+                          "parameters": [
+                            "Valise_sprite",
+                            "pente",
+                            "",
+                            "",
+                            ""
+                          ],
+                          "subInstructions": []
+                        },
+                        {
+                          "type": {
+                            "inverted": false,
+                            "value": "CollisionNP"
+                          },
+                          "parameters": [
+                            "Valise_sprite",
+                            "plateforme",
+                            "",
+                            "",
+                            ""
+                          ],
+                          "subInstructions": []
+                        },
+                        {
+                          "type": {
+                            "inverted": false,
+                            "value": "CollisionNP"
+                          },
+                          "parameters": [
+                            "Valise_sprite",
+                            "pics",
+                            "",
+                            "",
+                            ""
+                          ],
+                          "subInstructions": []
+                        },
+                        {
+                          "type": {
+                            "inverted": false,
+                            "value": "CollisionNP"
+                          },
+                          "parameters": [
+                            "Valise_sprite",
+                            "plaeforme2",
+                            "",
+                            "",
+                            ""
+                          ],
+                          "subInstructions": []
+                        },
+                        {
+                          "type": {
+                            "inverted": false,
+                            "value": "CollisionNP"
+                          },
+                          "parameters": [
+                            "Valise_sprite",
+                            "NewSol",
                             "",
                             "",
                             ""
@@ -3109,17 +3210,6 @@
             }
           ],
           "actions": [
-            {
-              "type": {
-                "inverted": false,
-                "value": "ResetTimer"
-              },
-              "parameters": [
-                "",
-                "\"Fireball_delay\""
-              ],
-              "subInstructions": []
-            },
             {
               "type": {
                 "inverted": false,
@@ -3337,6 +3427,215 @@
               "events": []
             }
           ]
+        },
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "ObjectTimerPaused"
+              },
+              "parameters": [
+                "Joueur",
+                "\"Invincibilité\""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "BuiltinCommonInstructions::Or"
+              },
+              "parameters": [],
+              "subInstructions": [
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "CollisionNP"
+                  },
+                  "parameters": [
+                    "Joueur",
+                    "Ennemi",
+                    "",
+                    "",
+                    ""
+                  ],
+                  "subInstructions": []
+                },
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "CollisionNP"
+                  },
+                  "parameters": [
+                    "Joueur",
+                    "Ennemi2",
+                    "",
+                    "",
+                    ""
+                  ],
+                  "subInstructions": []
+                },
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "CollisionNP"
+                  },
+                  "parameters": [
+                    "Joueur",
+                    "pics",
+                    "",
+                    "",
+                    ""
+                  ],
+                  "subInstructions": []
+                }
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "ModVarObjet"
+              },
+              "parameters": [
+                "Joueur",
+                "Vies",
+                "-",
+                "1"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "UnPauseObjectTimer"
+              },
+              "parameters": [
+                "Joueur",
+                "\"Invincibilité\""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "ResetObjectTimer"
+              },
+              "parameters": [
+                "Joueur",
+                "\"Invincibilité\""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "Opacity"
+              },
+              "parameters": [
+                "Joueur",
+                "=",
+                "127"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "events": [
+            {
+              "disabled": false,
+              "folded": false,
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "VarObjet"
+                  },
+                  "parameters": [
+                    "Joueur",
+                    "Vies",
+                    "<=",
+                    "0"
+                  ],
+                  "subInstructions": []
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "Quit"
+                  },
+                  "parameters": [
+                    ""
+                  ],
+                  "subInstructions": []
+                }
+              ],
+              "events": []
+            }
+          ]
+        },
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": true,
+                "value": "ObjectTimerPaused"
+              },
+              "parameters": [
+                "Joueur",
+                "\"Invincibilité\""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "ObjectTimer"
+              },
+              "parameters": [
+                "Joueur",
+                "\"Invincibilité\"",
+                "1"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "PauseObjectTimer"
+              },
+              "parameters": [
+                "Joueur",
+                "\"Invincibilité\""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "Opacity"
+              },
+              "parameters": [
+                "Joueur",
+                "=",
+                "255"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "events": []
         },
         {
           "disabled": false,
@@ -3560,161 +3859,6 @@
             }
           ],
           "events": []
-        },
-        {
-          "disabled": false,
-          "folded": false,
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [
-            {
-              "type": {
-                "inverted": false,
-                "value": "KeyPressed"
-              },
-              "parameters": [
-                "",
-                "a"
-              ],
-              "subInstructions": []
-            },
-            {
-              "type": {
-                "inverted": false,
-                "value": "VarScene"
-              },
-              "parameters": [
-                "Fireball_busy",
-                "=",
-                "0"
-              ],
-              "subInstructions": []
-            },
-            {
-              "type": {
-                "inverted": false,
-                "value": "Timer"
-              },
-              "parameters": [
-                "",
-                "0.4",
-                "\"Fireball_delay\""
-              ],
-              "subInstructions": []
-            }
-          ],
-          "actions": [
-            {
-              "type": {
-                "inverted": false,
-                "value": "Create"
-              },
-              "parameters": [
-                "",
-                "Boule_de_feu",
-                "Joueur.X()",
-                "Joueur.Y() + 25",
-                ""
-              ],
-              "subInstructions": []
-            },
-            {
-              "type": {
-                "inverted": false,
-                "value": "ResetTimer"
-              },
-              "parameters": [
-                "",
-                "\"Fireball_delay\""
-              ],
-              "subInstructions": []
-            }
-          ],
-          "events": [
-            {
-              "disabled": false,
-              "folded": false,
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
-                    "inverted": false,
-                    "value": "VarObjetTxt"
-                  },
-                  "parameters": [
-                    "Joueur",
-                    "Direction",
-                    "=",
-                    "\"left\""
-                  ],
-                  "subInstructions": []
-                }
-              ],
-              "actions": [
-                {
-                  "type": {
-                    "inverted": false,
-                    "value": "AddForceAL"
-                  },
-                  "parameters": [
-                    "Boule_de_feu",
-                    "180",
-                    "300",
-                    "1"
-                  ],
-                  "subInstructions": []
-                }
-              ],
-              "events": []
-            },
-            {
-              "disabled": false,
-              "folded": false,
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
-                    "inverted": false,
-                    "value": "VarObjetTxt"
-                  },
-                  "parameters": [
-                    "Joueur",
-                    "Direction",
-                    "=",
-                    "\"right\""
-                  ],
-                  "subInstructions": []
-                }
-              ],
-              "actions": [
-                {
-                  "type": {
-                    "inverted": false,
-                    "value": "MettreX"
-                  },
-                  "parameters": [
-                    "Boule_de_feu",
-                    "+",
-                    "50"
-                  ],
-                  "subInstructions": []
-                },
-                {
-                  "type": {
-                    "inverted": false,
-                    "value": "AddForceAL"
-                  },
-                  "parameters": [
-                    "Boule_de_feu",
-                    "0",
-                    "300",
-                    "1"
-                  ],
-                  "subInstructions": []
-                }
-              ],
-              "events": []
-            }
-          ]
         },
         {
           "disabled": false,
@@ -4043,6 +4187,74 @@
           "conditions": [
             {
               "type": {
+                "inverted": true,
+                "value": "Arret"
+              },
+              "parameters": [
+                "Valise_sprite"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "CollisionNP"
+              },
+              "parameters": [
+                "Ennemi",
+                "Valise_sprite",
+                "",
+                "",
+                ""
+              ],
+              "subInstructions": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "Arreter"
+              },
+              "parameters": [
+                "Valise_sprite"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "AddForceXY"
+              },
+              "parameters": [
+                "Valise_sprite",
+                "0",
+                "200",
+                "1"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "Delete"
+              },
+              "parameters": [
+                "Ennemi",
+                ""
+              ],
+              "subInstructions": []
+            }
+          ],
+          "events": []
+        },
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
                 "inverted": false,
                 "value": "VarObjetTxt"
               },
@@ -4211,12 +4423,22 @@
           "conditions": [
             {
               "type": {
+                "inverted": true,
+                "value": "Arret"
+              },
+              "parameters": [
+                "Valise_sprite"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
                 "inverted": false,
                 "value": "CollisionNP"
               },
               "parameters": [
-                "Boule_de_feu",
-                "Ennemi",
+                "Ennemi2",
+                "Valise_sprite",
                 "",
                 "",
                 ""
@@ -4228,11 +4450,23 @@
             {
               "type": {
                 "inverted": false,
-                "value": "Delete"
+                "value": "Arreter"
               },
               "parameters": [
-                "Ennemi",
-                ""
+                "Valise_sprite"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "AddForceXY"
+              },
+              "parameters": [
+                "Valise_sprite",
+                "0",
+                "200",
+                "1"
               ],
               "subInstructions": []
             },
@@ -4242,8 +4476,128 @@
                 "value": "Delete"
               },
               "parameters": [
-                "Boule_de_feu",
+                "Ennemi2",
                 ""
+              ],
+              "subInstructions": []
+            }
+          ],
+          "events": []
+        },
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "VarObjetTxt"
+              },
+              "parameters": [
+                "Ennemi2",
+                "Direction",
+                "=",
+                "\"left\""
+              ],
+              "subInstructions": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "AddForceAL"
+              },
+              "parameters": [
+                "Ennemi2",
+                "180",
+                "100",
+                ""
+              ],
+              "subInstructions": []
+            }
+          ],
+          "events": []
+        },
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "VarObjetTxt"
+              },
+              "parameters": [
+                "Ennemi2",
+                "Direction",
+                "=",
+                "\"right\""
+              ],
+              "subInstructions": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "AddForceAL"
+              },
+              "parameters": [
+                "Ennemi2",
+                "0",
+                "100",
+                ""
+              ],
+              "subInstructions": []
+            }
+          ],
+          "events": []
+        },
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "CollisionNP"
+              },
+              "parameters": [
+                "Ennemi2",
+                "Droite",
+                "",
+                "",
+                ""
+              ],
+              "subInstructions": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "ModVarObjetTxt"
+              },
+              "parameters": [
+                "Ennemi2",
+                "Direction",
+                "=",
+                "\"right\""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "FlipX"
+              },
+              "parameters": [
+                "Ennemi2",
+                "yes"
               ],
               "subInstructions": []
             }
@@ -4268,31 +4622,34 @@
                 ""
               ],
               "subInstructions": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "ModVarObjetTxt"
+              },
+              "parameters": [
+                "Ennemi2",
+                "Direction",
+                "=",
+                "\"left\""
+              ],
+              "subInstructions": []
             },
             {
               "type": {
                 "inverted": false,
-                "value": "CollisionNP"
+                "value": "FlipX"
               },
               "parameters": [
                 "Ennemi2",
-                "Droite",
-                "",
-                "",
                 ""
               ],
               "subInstructions": []
             }
           ],
-          "actions": [],
-          "events": []
-        },
-        {
-          "disabled": false,
-          "folded": false,
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [],
-          "actions": [],
           "events": []
         }
       ],
@@ -4348,7 +4705,7 @@
           "followBaseLayerCamera": false,
           "isLightingLayer": false,
           "name": "Interactions",
-          "visibility": false,
+          "visibility": true,
           "cameras": [],
           "effects": []
         }
