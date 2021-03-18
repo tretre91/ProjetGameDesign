@@ -597,6 +597,10 @@
     {
       "name": "Chrono",
       "value": "0"
+    },
+    {
+      "name": "TrueChrono",
+      "value": "0.0"
     }
   ],
   "layouts": [
@@ -894,7 +898,7 @@
         "gridWidth": 32,
         "snap": false,
         "windowMask": false,
-        "zoomFactor": 0.2618
+        "zoomFactor": 0.7658
       },
       "objectsGroups": [],
       "variables": [],
@@ -2539,7 +2543,7 @@
           "angle": 0,
           "customSize": false,
           "height": 0,
-          "layer": "",
+          "layer": "UI",
           "locked": false,
           "name": "TexteChrono",
           "persistentUuid": "d555ec73-d428-4347-b9a8-99bb3b9f465c",
@@ -3472,9 +3476,33 @@
                 "value": "ModVarGlobal"
               },
               "parameters": [
-                "Chrono",
+                "TrueChrono",
                 "+",
-                "1000 * TimeDelta()"
+                "TimeDelta()"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "ModVarGlobal"
+              },
+              "parameters": [
+                "Chrono",
+                "=",
+                "round(GlobalVariable(TrueChrono))"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "TextObject::String"
+              },
+              "parameters": [
+                "TexteChrono",
+                "=",
+                "\"Temps : \" + GlobalVariableString(Chrono) + \"s\""
               ],
               "subInstructions": []
             }
@@ -3735,6 +3763,18 @@
               },
               "parameters": [
                 "Chrono",
+                "=",
+                "0"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "ModVarGlobal"
+              },
+              "parameters": [
+                "TrueChrono",
                 "=",
                 "0.0"
               ],
@@ -5618,8 +5658,8 @@
           "name": "TexteChrono",
           "persistentUuid": "cd194e36-ce56-460e-975f-0dea47c7444c",
           "width": 0,
-          "x": 205,
-          "y": 282,
+          "x": 193,
+          "y": 280,
           "zOrder": 3,
           "numberProperties": [],
           "stringProperties": [],
@@ -5796,7 +5836,7 @@
               "parameters": [
                 "TexteChrono",
                 "=",
-                "\"Temps : \" + GlobalVariableString(Chrono)"
+                "\"Temps : \" + GlobalVariableString(Chrono) + \"s\""
               ],
               "subInstructions": []
             }
