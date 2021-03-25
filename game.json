@@ -587,6 +587,15 @@
         "name": "Ressources\\gg.png",
         "smoothed": true,
         "userAdded": false
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "Ressources/Fin_de_jeu.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Ressources\\Fin_de_jeu.png",
+        "smoothed": true,
+        "userAdded": false
       }
     ],
     "resourceFolders": []
@@ -5619,15 +5628,15 @@
       "instances": [
         {
           "angle": 0,
-          "customSize": false,
-          "height": 0,
+          "customSize": true,
+          "height": 601,
           "layer": "",
           "locked": false,
           "name": "background",
           "persistentUuid": "0af32182-3257-4e6e-94a2-7d8c290fea1f",
-          "width": 0,
-          "x": -567,
-          "y": -292,
+          "width": 802,
+          "x": 1,
+          "y": 1,
           "zOrder": 1,
           "numberProperties": [],
           "stringProperties": [],
@@ -5658,9 +5667,25 @@
           "name": "TexteChrono",
           "persistentUuid": "cd194e36-ce56-460e-975f-0dea47c7444c",
           "width": 0,
-          "x": 193,
-          "y": 280,
+          "x": 234,
+          "y": 334,
           "zOrder": 3,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "layer": "",
+          "locked": false,
+          "name": "recommencer",
+          "persistentUuid": "b9d14935-3c4c-4f5a-b48e-75418125dce3",
+          "width": 0,
+          "x": 138,
+          "y": 523,
+          "zOrder": 4,
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
@@ -5685,7 +5710,7 @@
                   "sprites": [
                     {
                       "hasCustomCollisionMask": false,
-                      "image": "Ressources\\gg.png",
+                      "image": "Ressources\\Fin_de_jeu.png",
                       "points": [],
                       "originPoint": {
                         "name": "origine",
@@ -5726,91 +5751,26 @@
           }
         },
         {
-          "name": "hitbox",
+          "bold": false,
+          "italic": false,
+          "name": "recommencer",
+          "smoothed": true,
           "tags": "",
-          "type": "Sprite",
-          "updateIfNotVisible": false,
+          "type": "TextObject::Text",
+          "underlined": false,
           "variables": [],
           "behaviors": [],
-          "animations": [
-            {
-              "name": "",
-              "useMultipleDirections": false,
-              "directions": [
-                {
-                  "looping": false,
-                  "timeBetweenFrames": 0.08,
-                  "sprites": [
-                    {
-                      "hasCustomCollisionMask": false,
-                      "image": "Ressources\\sprite_transparent.png",
-                      "points": [],
-                      "originPoint": {
-                        "name": "origine",
-                        "x": 0,
-                        "y": 0
-                      },
-                      "centerPoint": {
-                        "automatic": true,
-                        "name": "centre",
-                        "x": 0,
-                        "y": 0
-                      },
-                      "customCollisionMask": []
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
+          "string": "Appuyez sur R pour recommencer",
+          "font": "",
+          "characterSize": 35,
+          "color": {
+            "b": 255,
+            "g": 255,
+            "r": 255
+          }
         }
       ],
       "events": [
-        {
-          "disabled": false,
-          "folded": false,
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [
-            {
-              "type": {
-                "inverted": false,
-                "value": "CollisionPoint"
-              },
-              "parameters": [
-                "hitbox",
-                "MouseX()",
-                "MouseY()"
-              ],
-              "subInstructions": []
-            },
-            {
-              "type": {
-                "inverted": false,
-                "value": "MouseButtonReleased"
-              },
-              "parameters": [
-                "",
-                "Left"
-              ],
-              "subInstructions": []
-            }
-          ],
-          "actions": [
-            {
-              "type": {
-                "inverted": false,
-                "value": "Scene"
-              },
-              "parameters": [
-                "",
-                "\"scene1\"",
-                "yes"
-              ],
-              "subInstructions": []
-            }
-          ],
-          "events": []
-        },
         {
           "disabled": false,
           "folded": false,
@@ -5837,6 +5797,39 @@
                 "TexteChrono",
                 "=",
                 "\"Temps : \" + GlobalVariableString(Chrono) + \"s\""
+              ],
+              "subInstructions": []
+            }
+          ],
+          "events": []
+        },
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "KeyPressed"
+              },
+              "parameters": [
+                "",
+                "r"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "Scene"
+              },
+              "parameters": [
+                "",
+                "\"scene1\"",
+                "yes"
               ],
               "subInstructions": []
             }
